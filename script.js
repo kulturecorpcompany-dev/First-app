@@ -42,7 +42,7 @@ function loadPrefects(){
 }
 
 function login(){
-  const name = document.getElementById("name").value.trim();
+  const name = document.getElementById("assignName").value;
   const pass = document.getElementById("password").value;
 
   if(name.toLowerCase() === "admin"){
@@ -101,7 +101,7 @@ function assign(){
 }
 
 function removePrefect(){
-  const duty = document.getElementById("removeDuty").value;
+  const duty = document.getElementById("removeName").value;
   const name = document.getElementById("removeName").value;
 
   duties[duty].people = duties[duty].people.filter(p => p !== name);
