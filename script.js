@@ -1,4 +1,5 @@
 const PASSWORD = "Pr3f3cts2026";
+
 const prefects = [
   "Leeroy",
   "Xola",
