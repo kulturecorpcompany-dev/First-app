@@ -163,7 +163,28 @@ function render(){
   document.getElementById("userDuties").innerHTML =
     userView || "No duties assigned";
 
-  showAnalytics();
+  showAnalytics():
+  let max = 0;
+let top = "";
+
+Object.keys(stats).forEach(name => {
+  if(stats[name] > max){
+    max = stats[name];
+    top = name;
+  }
+});
+
+output += `<div class="card"><b>Top Active:</b> ${top}</div>`;
+
+  let values = Object.values(stats);
+let maxVal = Math.max(...values);
+let minVal = Math.min(...values);
+
+if(maxVal - minVal > 2){
+  output += `<div class="card">⚠️ Duties are unbalanced</div>`;
+} else {
+  output += `<div class="card">✅ Duties are balanced</div>`;
+}
 }
 
 function generateAnalytics(){
