@@ -28,6 +28,19 @@ let duties = JSON.parse(localStorage.getItem("duties")) || {
   "Hallways Duty": {capacity: 5, people: []}
 };
 
+function loadPrefects(){
+  let assign = document.getElementById("assignName");
+  let remove = document.getElementById("removeName");
+
+  assign.innerHTML = "";
+  remove.innerHTML = "";
+
+  prefects.forEach(p => {
+    assign.innerHTML += `<option value="${p}">${p}</option>`;
+    remove.innerHTML += `<option value="${p}">${p}</option>`;
+  });
+}
+
 function login(){
   const name = document.getElementById("name").value.trim();
   const pass = document.getElementById("password").value;
