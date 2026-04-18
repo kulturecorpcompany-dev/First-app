@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prefect Duty System</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div id="loginCard" class="card">
+    <h2>Prefect Duty System</h2>
+    <p class="small">Login to continue</p>
+
+    <input id="name" placeholder="Name or Admin">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="dashboard" style="display:none;">
+
+    <div class="card">
+      <h2 id="welcome"></h2>
+      <div id="roleBadge"></div>
+    </div>
+
+    <div class="card">
+      <h3>Your Duties</h3>
+      <div id="userDuties"></div>
+    </div>
+
+    <button onclick="logout()">Logout</button>
+
+    <div id="adminPanel" style="display:none;">
+
+      <div class="card">
+        <h3>Add Duty</h3>
+        <input id="dutyName" placeholder="Duty name">
+        <input id="dutyCap" type="number" placeholder="Capacity">
+        <button onclick="addDuty()">Add</button>
+      </div>
+
+      <div class="card">
+        <h3>Assign Prefect</h3>
+        <select id="selectDuty"></select>
+        <input id="assignName" placeholder="Prefect name">
+        <button onclick="assign()">Assign</button>
+      </div>
+
+      <div class="card">
+        <h3>Remove Prefect</h3>
+        <select id="removeDuty"></select>
+        <input id="removeName" placeholder="Name">
+        <button onclick="removePrefect()">Remove</button>
+      </div>
+
+      <div class="card">
+        <h3>Delete Duty</h3>
+        <select id="deleteDuty"></select>
+        <button onclick="deleteDuty()">Delete</button>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <h3>All Duties</h3>
+      <div id="allDuties"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
