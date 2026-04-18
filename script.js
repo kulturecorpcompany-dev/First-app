@@ -163,3 +163,36 @@ function render(){
   document.getElementById("userDuties").innerHTML =
     userView || "No duties assigned";
 }
+
+function generateAnalytics(){
+  let stats = {};
+
+  // Count duties per person
+  Object.keys(duties).forEach(duty => {
+    duties[duty].people.forEach(person => {
+      stats[person] = (stats[person] || 0) + 1;
+    });
+  });
+
+  return stats;
+}
+
+function showAnalytics(){
+  const stats = generateAnalytics();
+
+  let output = "<h3>Analytics</h3>";
+
+  if(Object.keys(stats).length === 0){
+    output += "<p>No data yet</p>";
+  } else {
+    Object.keys(stats).forEach(name => {
+      output += `
+        <div class="dutyBox">
+          <b>${name}</b> — ${stats[name]} duties
+        </div>
+      `;
+    });
+  }
+
+  document.getElementById("analytics").innerHTML = output;
+}
