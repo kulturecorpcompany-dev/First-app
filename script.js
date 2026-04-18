@@ -162,6 +162,8 @@ function render(){
 
   document.getElementById("userDuties").innerHTML =
     userView || "No duties assigned";
+
+  showAnalytics();
 }
 
 function generateAnalytics(){
