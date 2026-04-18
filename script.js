@@ -1,4 +1,24 @@
 const PASSWORD = "Pr3f3cts2026";
+const prefects = [
+  "Leeroy",
+  "Xola",
+  "Siya",
+  "Vuyo",
+  "Caleb",
+  "Akhanyile",
+  "Bok",
+  "Liyema",
+  "Leeshay",
+  "Amy",
+  "Tania",
+  "Lumena",
+  "Shawn",
+  "Sameer",
+  "Inga",
+  "Lizalise",
+  "Kamva",
+  "Karley-leigh"
+];
 
 let currentUser = "";
 let isAdmin = false;
