@@ -116,7 +116,7 @@ function deleteDuty(){
   render();
 }
 
-function save(){
+function save(loadPrefects()){
   localStorage.setItem("duties", JSON.stringify(duties));
 }
 
