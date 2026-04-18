@@ -43,7 +43,7 @@ function loadPrefects(){
 }
 
 function login(){
-  const name = document.getElementById("assignName").value;
+  const name = document.getElementById("name").value;
   const pass = document.getElementById("password").value;
 
   if(name.toLowerCase() === "admin"){
