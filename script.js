@@ -73,7 +73,8 @@ function start(){
     document.getElementById("adminPanel").style.display = "block";
     document.getElementById("roleBadge").innerHTML = "<b>ADMIN MODE</b>";
   }
-
+  
+  loadPrefects();
   render();
 }
 
@@ -117,7 +118,7 @@ function deleteDuty(){
   render();
 }
 
-function save(loadPrefects()){
+function save(){
   localStorage.setItem("duties", JSON.stringify(duties));
 }
 
