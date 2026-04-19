@@ -98,9 +98,10 @@ function assign(){
   const duty = document.getElementById("selectDuty").value;
   const name = document.getElementById("assignName").value;
 
-  duties[duty].people.push(name);
-  save();
-  render();
+  if(duties[duty].people.includes(name)){
+  alert("Already assigned");
+  return;
+}
 }
 
 function removePrefect(){
