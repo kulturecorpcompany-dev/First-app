@@ -81,6 +81,20 @@ console.log("Available duties:", Object.keys(duties));
   render();
 }
 
+let rd = document.getElementById("removeDutySelect");
+let rp = document.getElementById("removePrefectSelect");
+
+rd.innerHTML = "";
+rp.innerHTML = "";
+
+Object.keys(duties).forEach(d=>{
+  rd.innerHTML += `<option>${d}</option>`;
+});
+
+prefects.forEach(p=>{
+  rp.innerHTML += `<option>${p}</option>`;
+});
+
 function forceAssign(){
   const duty = document.getElementById("forceDuty").value;
   const person = document.getElementById("forcePrefect").value;
