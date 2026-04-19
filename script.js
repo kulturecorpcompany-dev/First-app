@@ -87,6 +87,35 @@ function forceAssign(){
   render();
 }
 
+function assign(){
+  const duty = document.getElementById("selectDuty").value;
+  const name = document.getElementById("assignName").value;
+
+  if(!duties[duty]){
+    alert("Duty does not exist");
+    return;
+  }
+
+  if(!name){
+    alert("No name selected");
+    return;
+  }
+
+  if(duties[duty].people.includes(name)){
+    alert("Already assigned");
+    return;
+  }
+
+  if(duties[duty].people.length >= duties[duty].capacity){
+    alert("Duty is full");
+    return;
+  }
+
+  duties[duty].people.push(name);
+  save();
+  render();
+}
+
 function respond(index, accept){
   let req = requests[index];
 
