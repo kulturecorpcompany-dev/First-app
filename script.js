@@ -21,7 +21,7 @@ function login(){
   const name = document.getElementById("name").value;
   const pass = document.getElementById("password").value;
 
-  if(name.toLowerCase() === "admin" && pass === "HeadBoy" || pass === "HeadGirl")}
+  if(name.toLowerCase() === "admin" && pass === "HeadBoy" || pass === "HeadGirl")
     isAdmin = true;
     currentUser = "Admin";
   }
