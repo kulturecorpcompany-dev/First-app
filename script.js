@@ -165,7 +165,7 @@ function render(){
   document.getElementById("userDuties").innerHTML =
     userView || "No duties assigned";
 
-  showAnalytics():
+  showAnalytics();
   let max = 0;
 let top = "";
 
