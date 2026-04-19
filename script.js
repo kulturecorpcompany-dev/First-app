@@ -88,9 +88,10 @@ function addDuty(){
 
   if(!name || !cap) return;
 
-  duties[name] = {capacity: cap, people: []};
-  save();
-  render();
+  if(duties[duty].people.length >= duties[duty].capacity){
+  alert("Duty is full");
+  return;
+}
 }
 
 function assign(){
