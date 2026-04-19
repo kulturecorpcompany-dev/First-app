@@ -4,83 +4,80 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Prefect Duty System</title>
+<title>Prefect System V2</title>
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0f172a">
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <div class="container">
 
-  <div id="loginCard" class="card">
-    <h2>Prefect Duty System</h2>
-    <p class="small">Login to continue</p>
+<!-- LOGIN -->
+<div id="loginBox" class="card">
+  <h2>Prefect System V2</h2>
 
-    <input id="name" placeholder="Name or Admin">
-    <input id="password" type="password" placeholder="Password">
+  <input id="name" placeholder="Name / Admin">
+  <input id="password" type="password" placeholder="Password">
 
-    <button onclick="login()">Login</button>
-  </div>
-
-  <div id="dashboard" style="display:none;">
-
-    <div class="card">
-      <h2 id="welcome"></h2>
-      <div id="roleBadge"></div>
-    </div>
-
-    <div class="card">
-      <h3>Your Duties</h3>
-      <div id="userDuties"></div>
-    </div>
-
-    <button onclick="logout()">Logout</button>
-
-    <div id="adminPanel" style="display:none;">
-
-      <div class="card">
-        <h3>Add Duty</h3>
-        <input id="dutyName" placeholder="Duty name">
-        <input id="dutyCap" type="number" placeholder="Capacity">
-        <button onclick="addDuty()">Add</button>
-      </div>
-
-      <div class="card">
-        <h3>Assign Prefect</h3>
-        <select id="assignDuty"></select>
-        <select id="assignName"></select>
-        <button onclick="assign()">Assign</button>
-      </div>
-
-      <div class="card">
-        <h3>Remove Prefect</h3>
-        <select id="renoveDuty"></select>
-        <select id="removeName"></select>
-        <button onclick="removePrefect()">Remove</button>
-      </div>
-
-      <div class="card">
-        <h3>Delete Duty</h3>
-        <select id="deleteDuty"></select>
-        <button onclick="deleteDuty()">Delete</button>
-      </div>
-
-    </div>
-
-    <div class="card">
-      <h3>All Duties</h3>
-      <div id="allDuties"></div>
-    </div>
-    <div class="card">
-  <div id="analytics"></div>
+  <button onclick="login()">Login</button>
 </div>
 
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none;">
+
+  <div class="card">
+    <h2 id="welcome"></h2>
+    <div id="roleTag"></div>
   </div>
+
+  <!-- PREFECT VIEW -->
+  <div class="card">
+    <h3>Your Duties</h3>
+    <div id="userDuties"></div>
+  </div>
+
+  <!-- PREFECT ACTIONS -->
+  <div class="card" id="prefectActions">
+    <h3>Duty Response</h3>
+    <div id="pendingList"></div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="adminPanel" style="display:none;">
+
+    <div class="card">
+      <h3>Create Duty</h3>
+      <input id="dutyName" placeholder="Duty name">
+      <button onclick="createDuty()">Create</button>
+    </div>
+
+    <div class="card">
+      <h3>Assign Duty</h3>
+      <select id="dutySelect"></select>
+      <select id="prefectSelect"></select>
+      <button onclick="assignDuty()">Assign</button>
+    </div>
+
+    <div class="card">
+      <h3>Force Assign</h3>
+      <select id="forceDuty"></select>
+      <select id="forcePrefect"></select>
+      <button onclick="forceAssign()">Force</button>
+    </div>
+
+  </div>
+
+  <!-- ALL DUTIES -->
+  <div class="card">
+    <h3>All Duties</h3>
+    <div id="allDuties"></div>
+  </div>
+
+</div>
 
 </div>
 
@@ -88,9 +85,7 @@
 
 <script>
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js")
-  .then(() => console.log("SW registered"))
-  .catch(err => console.log("SW error", err));
+  navigator.serviceWorker.register("service-worker.js");
 }
 </script>
 
