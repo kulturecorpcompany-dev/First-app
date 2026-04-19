@@ -73,6 +73,9 @@ function assignDuty(){
     person,
     status: "pending"
   });
+  
+  console.log("Selected duty:", duty);
+console.log("Available duties:", Object.keys(duties));
 
   save();
   render();
