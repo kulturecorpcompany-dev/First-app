@@ -103,9 +103,9 @@ function assign(){
 }
 
 function removePrefect(){
-  const duty = document.getElementById("removeName").value;
-  const name = document.getElementById("removeName").value;
-
+  const duty = document.getElementById("removeDuty").value;
+const name = document.getElementById("removeName").value;
+  
   duties[duty].people = duties[duty].people.filter(p => p !== name);
   save();
   render();
