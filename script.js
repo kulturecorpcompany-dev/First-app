@@ -95,6 +95,19 @@ prefects.forEach(p=>{
   rp.innerHTML += `<option>${p}</option>`;
 });
 
+function removePrefectFromDuty(){
+  const duty = document.getElementById("removeDutySelect").value;
+  const person = document.getElementById("removePrefectSelect").value;
+
+  if(!duties[duty]) return;
+
+  duties[duty] = duties[duty].filter(p => p !== person);
+
+  save();
+  render();
+  loadDropdowns();
+}
+
 function forceAssign(){
   const duty = document.getElementById("forceDuty").value;
   const person = document.getElementById("forcePrefect").value;
