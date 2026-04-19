@@ -45,6 +45,7 @@ function start(){
     document.getElementById("adminPanel").style.display = "block";
   }
 
+  sel.innerHTML += `<option value="${d}">${d}</option>`;
   loadDropdowns();
   render();
 }
