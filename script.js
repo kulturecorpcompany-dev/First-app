@@ -71,7 +71,7 @@ function start(){
 
   if(isAdmin){
     document.getElementById("adminPanel").style.display = "block";
-    document.getElementById("roleBadge").innerHTML = "<b>ADMIN MODE</b>";
+    document.getElementById("roleBadge").innerHTML = "<b>ADMIN</b>";
   }
   
   loadPrefects();
