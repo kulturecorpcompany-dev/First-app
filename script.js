@@ -21,6 +21,11 @@ const prefects = [
   "Karley-leigh"
 ];
 
+if(!prefects.includes(name)){
+  alert("Not a valid prefect");
+  return;
+}
+
 let currentUser = "";
 let isAdmin = false;
 
