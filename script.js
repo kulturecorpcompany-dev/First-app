@@ -142,15 +142,7 @@ function render(){
 
   let all = "";
 
-  Object.keys(duties).forEach(d=>{
-    all += `
-      <div class="dutyBox">
-        <b>${d}</b><br>
-        ${duties[d].people.join(", ") || "No assignments"}
-        <br><small>${duties[d].people.length}/${duties[d].capacity}</small>
-      </div>
-    `;
-  });
+  
 
   document.getElementById("allDuties").innerHTML = all;
 
@@ -217,6 +209,15 @@ function showAnalytics(){
         </div>
       `;
     });
+    Object.keys(duties).forEach(d=>{
+    all += `
+      <div class="dutyBox">
+        <b>${d}</b><br>
+        ${duties[d].people.join(", ") || "No assignments"}
+        <br><small>${duties[d].people.length}/${duties[d].capacity}</small>
+      </div>
+    `;
+  });
   }
 
   document.getElementById("analytics").innerHTML = output;
