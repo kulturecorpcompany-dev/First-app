@@ -1,11 +1,11 @@
 const CACHE_NAME = "prefect-app-v1";
 
 const FILES_TO_CACHE = [
-  "/First-app./",
-  "/First-app./index.html",
-  "/First-app./style.css",
-  "/First-app./script.js",
-  "/First-app./manifest.json"
+  "/",
+  "/index.html",
+  "/style.css",
+  "/script.js",
+  "/manifest.json"
 ];
 
 self.addEventListener("install", (event) => {
