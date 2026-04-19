@@ -100,6 +100,29 @@ function respond(index, accept){
   render();
 }
 
+function assign(){
+  const duty = document.getElementById("selectDuty").value;
+  const name = document.getElementById("assignName").value;
+
+  if(!name || !duty) return;
+
+  // Prevent duplicate inside SAME duty only
+  if(duties[duty].people.includes(name)){
+    alert("Already assigned to this duty");
+    return;
+  }
+
+  // Capacity check still useful
+  if(duties[duty].people.length >= duties[duty].capacity){
+    alert("Duty is full");
+    return;
+  }
+
+  duties[duty].people.push(name);
+  save();
+  render();
+}
+
 function loadDropdowns(){
   let d1 = document.getElementById("dutySelect");
   let d2 = document.getElementById("forceDuty");
