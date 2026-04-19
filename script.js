@@ -1,4 +1,5 @@
 const PASSWORD = "Pr3f3cts2026";
+const pass = document.getElementById("password").value.trim();
 
 const prefects = [
   "Leeroy",
