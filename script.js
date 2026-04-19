@@ -68,6 +68,13 @@ function login(){
   }
 }
 
+const name = document.getElementById("name").value.trim();
+
+if(!prefects.includes(name)){
+  alert("Not a valid prefect name");
+  return;
+}
+
 function start(){
   document.getElementById("loginCard").style.display = "none";
   document.getElementById("dashboard").style.display = "block";
